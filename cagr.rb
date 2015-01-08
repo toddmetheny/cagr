@@ -1,5 +1,5 @@
 require 'sinatra'
 
 get '/' do
-	send_file 'cagr.html'
+	send_file 'public/cagr.html'
 end
