@@ -1,0 +1,31 @@
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+</head>
+
+<div class="all">
+	<h4>Compound Annual Growth Rate Calculator</h4>
+
+	Starting Value <input type="number" id="starting"><br><br>
+	Ending Value <input type="number" id="ending"><br><br>
+	Number of Compounding Periods <input type="number" id="periods"><br><br>
+	<input type="submit" id="submit-btn"><br><br>
+</div>
+
+
+<script type="text/javascript">
+	// var x = $("input#starting").val();
+	// console.log(x);
+	$("#submit-btn").on("click", function(){
+		// console.log($("input#starting").val());
+		// console.log($("input#ending").val());
+		// console.log($("input#periods").val());
+		var starting = $("input#starting").val();
+		var ending = $("input#ending").val();
+		var periods = $("input#periods").val();
+		// console.log(Math.pow((ending / starting), (1 / periods)) - 1);
+		var cagr = (Math.pow((ending / starting), (1 / periods)) - 1);
+		console.log(Math.round(cagr * 100));
+		var to_percent = "\n" + Math.round(cagr * 100) + "%" + "\n"
+		$(".all").append(to_percent)
+	})
+</script>
