@@ -1,15 +1,16 @@
 <head>
-	
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="cagr.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 </head>
 
-<div class="all">
+<div class="all text-center">
 	<h4>Compound Annual Growth Rate Calculator</h4>
-
-	Starting Value <input type="number" id="starting"><br><br>
-	Ending Value <input type="number" id="ending"><br><br>
-	Number of Compounding Periods <input type="number" id="periods"><br><br>
-	<input type="submit" id="submit-btn"><br><br>
+		Starting Value <input type="number" id="starting"><br><br>
+		Ending Value <input type="number" id="ending"><br><br>
+		Number of Periods <input type="number" id="periods"><br><br>
+		<input type="submit" id="submit-btn"><br><br>
+	
 </div>
 
 
@@ -20,7 +21,7 @@
 		var periods = $("input#periods").val();	
 		var cagr = (Math.pow((ending / starting), (1 / periods)) - 1);
 		console.log(Math.round(cagr * 100));
-		var to_percent = "\n" + Math.round(cagr * 100) + "%" + "\n";
+		var to_percent = "\n" + Math.round(cagr * 100) + "%";
 		$(".all").append(to_percent);
 	})
 </script>
